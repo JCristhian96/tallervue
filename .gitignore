@@ -1,0 +1,11 @@
+etaller/
+
+# Vue project
+backend/frontend/
+
+backend/db.sqlite3
+
+*.pyc
+
+backend/apps/books/migrations/*.py
+!backend/apps/books/migrations/__init__.py
