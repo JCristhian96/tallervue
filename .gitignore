@@ -1,3 +1,7 @@
+#VsCode
+.vscode
+workspace.code-workspace
+
 etaller/
 
 # Vue project
@@ -7,5 +11,10 @@ backend/db.sqlite3
 
 *.pyc
 
+# App Book
 backend/apps/books/migrations/*.py
 !backend/apps/books/migrations/__init__.py
+
+# App Elements
+backend/apps/elements/migrations/*.py
+!backend/apps/elements/migrations/__init__.py
