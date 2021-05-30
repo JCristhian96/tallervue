@@ -21,7 +21,7 @@ class TypeViewSet(viewsets.ModelViewSet):
         if queryset.exists():
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response({'message' : 'Nada nadita nada :c'}, status=status.HTTP_202_ACCEPTED)
+            return Response({'message' : 'Ningun elemento de este Tipo :c'}, status=status.HTTP_202_ACCEPTED)
 
 
 class CategoryViewSet(viewsets.ModelViewSet):
@@ -35,7 +35,7 @@ class CategoryViewSet(viewsets.ModelViewSet):
         if queryset.exists():
             return Response(serializer.data, status=status.HTTP_200_OK)
         else:
-            return Response({'message' : 'Nada nadita nada :c'}, status=status.HTTP_202_ACCEPTED)
+            return Response({'message' : 'Ningun elemento en esta Categoria :c'}, status=status.HTTP_202_ACCEPTED)
 
 
 class ElementViewSet(viewsets.ModelViewSet):
