@@ -3,6 +3,7 @@
 workspace.code-workspace
 
 etaller/
+pruebas/
 
 # Vue project
 backend/frontend/
@@ -23,3 +24,7 @@ backend/apps/elements/migrations/*.py
 # App Clients
 backend/apps/clients/migrations/*.py
 !backend/apps/clients/migrations/__init__.py
+
+# App Beneficiarys
+backend/apps/beneficiarys/migrations/*.py
+!backend/apps/beneficiarys/migrations/__init__.py

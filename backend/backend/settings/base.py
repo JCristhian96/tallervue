@@ -24,9 +24,11 @@ INSTALLED_APPS = [
     'apps.books',
     'apps.elements',
     'apps.clients',
+    'apps.beneficiarys',
     # Thrids
     'rest_framework',
     'corsheaders',
+    'import_export',
 ]
 
 MIDDLEWARE = [
