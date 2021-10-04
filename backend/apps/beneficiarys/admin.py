@@ -10,11 +10,11 @@ class OriginAdmin(ImportExportModelAdmin):
 
 class BeneficiarioAdmin(ImportExportModelAdmin):
     '''Admin View for Beneficiario'''
-
+    search_fields = ('dni', 'names', 'origin__name')
     list_display = ('dni', 'names', 'origin', 'created_at')
     list_filter = ('origin', )
 
-    ordering = ('names', 'created_at')
+    ordering = ('names', 'created_at', )
     
 
 admin.site.register(Beneficiario, BeneficiarioAdmin)

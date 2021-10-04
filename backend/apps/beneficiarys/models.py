@@ -1,5 +1,6 @@
 from django.db import models
 from django.core import validators
+from django.db.models.signals import pre_save
 # Managers
 from apps.beneficiarys.managers import BeneficiarioManager, OriginManager
 
@@ -42,3 +43,10 @@ class Beneficiario(models.Model):
 
     def __str__(self):
         return self.names
+
+
+def set_uppernames(instance, sender, *args, **kwargs):
+    instance.names = instance.names.upper()
+    return instance
+
+pre_save.connect(set_uppernames, sender=Beneficiario)
