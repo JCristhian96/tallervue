@@ -2,29 +2,26 @@
 .vscode
 workspace.code-workspace
 
-etaller/
-pruebas/
+# Database Local
+backend/db.sqlite3
+
+# Secret Keys
+backend/.env
+
+# Cache
+*.pyc
+
+# Migrations
+backend/apps/**/migrations/*.*
+!backend/apps/**/migrations/__init__.py
+
+# Fixtures
+backend/apps/**/fixtures/*.*
+
+# Media and Static Files
+backend/media/
+backend/staticfiles/
 
 # Vue project
 backend/frontend/
 backend/media/
-
-backend/db.sqlite3
-
-*.pyc
-
-# App Book
-backend/apps/books/migrations/*.py
-!backend/apps/books/migrations/__init__.py
-
-# App Elements
-backend/apps/elements/migrations/*.py
-!backend/apps/elements/migrations/__init__.py
-
-# App Clients
-backend/apps/clients/migrations/*.py
-!backend/apps/clients/migrations/__init__.py
-
-# App Beneficiarys
-backend/apps/beneficiarys/migrations/*.py
-!backend/apps/beneficiarys/migrations/__init__.py

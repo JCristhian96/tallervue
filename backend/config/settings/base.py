@@ -1,35 +1,49 @@
+import os
 from unipath import Path
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).ancestor(3)
+
+# Load Secret Keys
+load_dotenv(BASE_DIR.child('.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(gsl45agale12!sc7rzv!ejv(dg1d6t&o*2)u&e65qq4t^-tbg'
+SECRET_KEY = os.getenv("SECRET_KEY")
 
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = (    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Locals
+)
+
+LOCAL_APPS = (
+    'apps.users',
     'apps.books',
     'apps.elements',
     'apps.clients',
     'apps.beneficiarys',
-    # Thrids
-    'rest_framework',
-    'corsheaders',
-    'import_export',
-]
+)
+
+THRID_PARTY_APPS = (
+    'rest_framework', # API Rest
+    'corsheaders', # Cors
+    'import_export', # Excel
+    'drf_yasg', # Docs API Rest
+    'django_filters', # API Queyset Filters
+)
+
+INSTALLED_APPS = list(DJANGO_APPS + LOCAL_APPS + THRID_PARTY_APPS)
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -53,7 +67,7 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 
-ROOT_URLCONF = 'backend.urls'
+ROOT_URLCONF = 'config.urls'
 
 TEMPLATES = [
     {
@@ -71,7 +85,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'backend.wsgi.application'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 
 # Password validation
@@ -111,3 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# 
+AUTH_USER_MODEL = 'users.User'

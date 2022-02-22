@@ -1,4 +1,4 @@
-from rest_framework import routers, urlpatterns
+from rest_framework import routers
 # ViewSets
 from apps.clients.api import viewsets
 
